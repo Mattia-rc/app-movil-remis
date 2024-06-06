@@ -1,0 +1,95 @@
+.bg-custom{
+    background-color: var(--background-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.contenedor-vista-into{
+
+    padding: 20px;
+}
+
+.button-back{
+    width: 130px;
+    padding: 6px;
+    border: 2px solid var(--color-letra-boton);
+    background-color: transparent;
+    border-radius: 20px;
+    color: var(--color-letra-boton);
+    font-family: var(--font-Style);
+}
+
+.contenedor-servicios{
+    text-align: center;
+    padding-top: 200px;
+}
+
+.h3-text{
+    color: var(--color-primary-letra);
+    font-family: var(--font-Style);
+    font-weight: 600;
+}
+
+.contenedor-box{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+.box-style{
+    width: 400px;
+    height: 400px;
+    background-color: var(--color-box);
+    border-radius: 15px;
+    box-shadow: 0 5px 8px #2b3b83;
+}
+
+
+
+
+.h6-text{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 23px;
+    font-family: var(--font-Style);
+    font-weight: 600;
+    color: var(--color-primary-letra);
+}
+
+.text-box-width{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.p-text{
+    padding-top: 20px;
+    text-align: left;
+    color: var(--color-primary-letra);
+    font-family: var(--font-Style);
+
+}
+
+.div-btn{
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+
+.btn-style{
+width: 100%;
+padding: 6px;
+background-color: transparent;
+border: 2.5px solid var(--color-letra-boton);
+border-radius: 15px;
+color: var(--color-blue);
+font-size: 20px;
+font-family: var(--font-Style);
+font-weight: 600;
+color: var(--color-primary-letra);
+}
+
+.btn-style:hover{
+    transition: 0.5s;
+    box-shadow: 0 5px 6px var(--color-letra-boton);
+}

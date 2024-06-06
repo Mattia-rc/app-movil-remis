@@ -1,0 +1,21 @@
+<div class="b-custom">
+    <div *ngIf="nombreUsuario" class="contenedor-info">
+        <a routerLink="/vista"><button class="button-back">Back</button></a>
+        <h3 class="h3-user-text">Bienvenido usuario: {{nombreUsuario}} </h3>
+    </div>
+    <div class="text-principal">
+        <h1 class="h1-text-principal">Bienvenido al Registro de tu Remis</h1>
+        <h5 class="h5-style-text">Aquí podras registrar tu coche, ingresando los datos que se piden en el formulario para luego poder comenzar
+            a guardar cada servicio que realiza. <span class="span-style">Sigue los siguientes pasos.</span></h5>
+        <div class="form-datos">
+            <form (ngSubmit)="Onsubmit(registerMovilForm)" #registerMovilForm="ngForm" class="form-datos-input" action="">
+                <input type="text" id="marca" name="marca" ngModel placeholder="Ingrese la marca del vehiculo" required>
+                <input type="text" id="modelo" name="modelo" ngModel placeholder="Ingrese el modelo del vehiculo" required>
+                <input type="text" id="patente" name="patente" ngModel placeholder="Ingrese la patente del vehiculo" required>
+                <input type="text" id="numeroMovil" name="numeroMovil" ngModel placeholder="Ingrese el numero que deseas asignarle al vehiculo" required>
+                <button class="btn-style" type="submit">Registrar Vehiculo</button>
+            </form>
+
+        </div>
+    </div>
+</div>

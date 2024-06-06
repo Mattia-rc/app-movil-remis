@@ -1,0 +1,22 @@
+<div class="b-custom">
+<div class="container">
+    <div class="contenedor-form">
+        <h1 class="text-login pb-2">Login</h1>
+        <h6 class="text-complement">Please enter your Login and your Password</h6>
+        <div class="form">
+            <form (ngSubmit)="onSubmit(params)" #params="ngForm" class="form-flex" action="">
+                <input type="email" name="username" ngModel placeholder="E-mail" required >
+                <input type="text" name="nombre" ngModel placeholder="nombre" required >
+                <input type="password" name="password" ngModel placeholder="Password" required>
+                <div class="d-flex justify-content-end">
+                    <p id="forgot-password">Forgot Password?</p>
+                </div>
+                <button id="button-login" type="submit">Login</button>
+                <a [routerLink]="['/register']">
+                    <h5 id="not-member">Not a member yet? <span id="span-register">Register!</span></h5>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

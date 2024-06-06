@@ -1,0 +1,97 @@
+.b-custom{
+    background-color: var(--background-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+.contenedor-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.button-back{
+    width: 130px;
+    padding: 6px;
+    border: 2px solid var(--color-letra-boton);
+    background-color: transparent;
+    border-radius: 20px;
+    color: var(--color-letra-boton);
+    font-family: var(--font-Style);
+}
+
+.h3-user-text{
+    color: var(--color-letra-boton);
+    font-family: var(--font-Style);
+    font-size: 15px;
+}
+
+
+.text-principal{
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+
+.h1-text-principal{
+    text-align: center;
+    color: var(--second-color);
+    font-family: var(--font-Style);
+}
+
+.h5-style-text{
+    padding-top: 20px;
+    text-align: center;
+    color: var(--color-primary-letra);
+    font-family: var(--font-Style);
+    font-size: 17px;
+
+}
+
+.form-datos{
+    padding-top: 50px;
+    width:80%;
+    margin: 0 auto;
+}
+
+.form-datos-input{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-datos-input, input{
+    padding: 15px;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+input{
+    border: 2px solid var(--color-letra-boton);
+    color: var(--color-primary-letra);
+
+}
+
+input::placeholder{
+    color: var(--color-primary-letra);
+    font-family: var(--font-Style);
+    font-size: 14px;
+}
+
+
+.btn-style{
+    margin: 0 auto;
+    width: 60%;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px solid var(--second-color);
+    border-radius: 15px;
+    font-family: var(--font-Style);
+    font-size: 15px;
+    color: var(--color-primary-letra);
+}
+
+.btn-style:hover{
+    transition: 0.5s;
+    box-shadow: 0 5px 8px #2b3b83;
+}

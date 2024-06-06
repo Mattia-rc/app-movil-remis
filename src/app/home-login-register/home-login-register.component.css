@@ -1,0 +1,87 @@
+a{
+    text-decoration: none;
+}
+
+.b-custom{
+    background-image: url('../../assets/background.png');
+    background-position: center;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    padding-top: 250px;
+}
+
+
+.text-login{
+    font-family: var(--font-Style);
+    text-align: center;
+    font-weight: 500;
+    font-size: 50px;
+    color: var(--color-primary-letra);
+}
+
+.text-complement{
+    font-family: var(--font-Style);
+    text-align: center;
+    font-weight: 500;
+    color:var(--color-primary-letra);
+}
+
+.form{
+    width: 470px;
+    margin: 0 auto;
+}
+
+.form-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.form-flex input{
+    padding: 12px;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid var(--color-primary-letra);
+    font-family: var(--font-Style);
+}
+
+.form-flex input::placeholder{
+color: var(--color-primary-letra);
+background-color: transparent;
+}
+
+#forgot-password{
+    font-family: var(--font-Style);
+    color: var(--color-primary-letra);
+}
+
+#button-login{
+    padding: 12px;
+    border-radius: 20px;
+    border: 2px solid var(--color-border-boton-log-reg);
+    background-color: transparent;
+    font-family: var(--font-Style);
+    color: var(--color-letra-boton);
+}   
+
+
+#not-member{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-family: var(--font-Style);
+    color: var(--color-primary-letra);
+}
+
+#span-register{
+    color: rgb(2, 2, 37);
+}

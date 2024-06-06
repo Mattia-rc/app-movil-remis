@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+
+:root{
+   --font-Style:'Poppins', sans-serif;
+    --color-primary-letra:#ffff;
+    --color-border-boton-log-reg: #43d993;
+    --color-letra-boton: #43d993;
+    --color-box:#003238;
+    --second-color:#40c0d1;
+    --background-color:#001314;
+}
+
+
+
+
+
+

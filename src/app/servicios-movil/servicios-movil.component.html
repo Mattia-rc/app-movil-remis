@@ -1,0 +1,25 @@
+<div class="b-custom">
+    <div *ngIf="nombreUsuario" class="contenedor-info">
+        <a routerLink="/vista"><button class="button-back">Back</button></a>
+        <h3 class="h3-user-text">Bienvenido usuario: {{nombreUsuario}} </h3>
+    </div>
+    <div class="text-principal">
+        <h1 class="h1-text-principal">Comienza a guardar los servicios del Remis</h1>
+        <h5 class="h5-style-text">Aquí podras comenzar a guardar los servicios que se realizo en la semana, para luego
+            poder observar el total recaudado.<span class="span-style"> Si usted aún no a registrado su vehiculo, lo invitamos a hacerlo!. </span> 
+            <a routerLink="/vista/movil">Click aquí!</a>
+        </h5>
+        <div class="form-datos">
+            <form (ngSubmit)="Onsubmit(registerServicio)" #registerServicio="ngForm" class="form-datos-input" action="">
+                <input type="date" id="date" name="date" ngModel required>
+                <input type="text" id="origen" name="origen" ngModel placeholder="Ingrese el origen del servicio"
+                    required>
+                <input type="text" id="total" name="total" ngModel placeholder="Ingrese el importe total"
+                    required>
+
+                <button class="btn-style" type="submit">Guardar Servicio</button>
+            </form>
+
+        </div>
+    </div>
+</div>
