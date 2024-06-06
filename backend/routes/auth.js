@@ -112,4 +112,26 @@ router.post('/vista/servicio', async(req,res)=>{
 
 })
 
+// Nuevo endpoint para obtener toda la información del usuario
+router.get('/vista/informe', async (req, res) => {
+    try {
+        if (!userLogged) {
+            return res.status(403).send("Usuario no autenticado");
+        }
+
+        const userInfo = {
+            username: userLogged.username,
+            nombre: userLogged.nombre,
+            moviles: userLogged.movil,
+            servicios: userLogged.movil.reduce((acc, curr) => acc.concat(curr.servicios), [])
+        };
+
+        return res.status(200).json(userInfo);
+    } catch (error) {
+        console.error("Error al obtener información del usuario", error);
+        res.status(500).send("Error interno del servidor");
+    }
+});
+
+
 module.exports = router;

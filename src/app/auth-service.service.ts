@@ -59,5 +59,8 @@ export class AuthServiceService {
     console.log("los servicios del movil es: ", data);
     return this.http.post(`${this.baseUrl}/vista/servicio`, data, {responseType:'text'})
   }
+  getInforme(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/vista/informe`);
+}
 
 }
