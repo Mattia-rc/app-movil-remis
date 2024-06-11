@@ -23,21 +23,21 @@ export class ServiciosMovilComponent implements OnInit{
     this.nombreUsuario = this.authService.getName()
 }
 
-Onsubmit(form:NgForm):void{
-  const {date, origen, total} = form.value
+Onsubmit(form: NgForm): void {
+  const { date, origen, total, numeroMovil } = form.value;
 
-  if(date&&origen&&total){
-    console.log("llegaron correctamente los datos: ",{date, origen, total})
-    this.authService.serviciosMovil({date, origen, total}).subscribe(
-      res=>{
-        console.log("datos guardados en la BD de manera exitosa")
-      },error=>{
-        console.log("datos no guardados en la BD", error)
+  if (date && origen && total && numeroMovil) {
+    console.log("Llegaron correctamente los datos: ", { date, origen, total, numeroMovil });
+    this.authService.serviciosMovil({ date, origen, total, numeroMovil }).subscribe(
+      res => {
+        console.log("Datos guardados en la BD de manera exitosa");
+      },
+      error => {
+        console.log("Datos no guardados en la BD", error);
       }
-    )
-  }else{
-    console.log("no llegaron los datos")
+    );
+  } else {
+    console.log("No llegaron los datos");
   }
-}
-
+  }
 }

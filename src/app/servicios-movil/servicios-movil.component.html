@@ -12,10 +12,9 @@
         <div class="form-datos">
             <form (ngSubmit)="Onsubmit(registerServicio)" #registerServicio="ngForm" class="form-datos-input" action="">
                 <input type="date" id="date" name="date" ngModel required>
-                <input type="text" id="origen" name="origen" ngModel placeholder="Ingrese el origen del servicio"
-                    required>
-                <input type="text" id="total" name="total" ngModel placeholder="Ingrese el importe total"
-                    required>
+                <input type="text" id="origen" name="origen" ngModel placeholder="Ingrese el origen del servicio" required>
+                <input type="text" id="numeroMovil" name="numeroMovil" ngModel placeholder="Ingrese el numero de movil" required>
+                <input type="text" id="total" name="total" ngModel placeholder="Ingrese el importe total" required>
 
                 <button class="btn-style" type="submit">Guardar Servicio</button>
             </form>

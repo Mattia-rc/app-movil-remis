@@ -1,20 +1,94 @@
-<!-- Mostrar servicios -->
-<div *ngIf="informeMovil.servicios && informeMovil.servicios.length > 0">
-    <h2>Servicios:</h2>
-    <ul>
-      <li *ngFor="let servicio of informeMovil.servicios">
-        {{ servicio.date }} - {{ servicio.origen }} - {{servicio.total}}
-      </li>
-    </ul>
+<!-- <table border="1">
+  <thead>
+    <tr>
+      <th>Número de Móvil</th>
+      <th>Fecha</th>
+      <th>Origen</th>
+      <th>Importe</th>
+      <th>Total Servicios con Descuento</th>
+      <th>Descuento Remiseria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let movil of informeMovil.moviles">
+      <ng-container *ngFor="let servicio of movil.servicios; let i = index">
+        <tr>
+          <td *ngIf="i === 0" [attr.rowspan]="movil.servicios.length">{{ movil.numeroMovil }}</td>
+          <td>{{ servicio.date | date }}</td>
+          <td>{{ servicio.origen }}</td>
+          <td>{{ servicio.total }}</td>
+          <td *ngIf="i === 0" [attr.rowspan]="movil.servicios.length">{{ movil.resultadoFinal }}</td>
+        </tr>
+      </ng-container>
+      <tr *ngIf="movil.servicios.length === 0">
+        <td>{{ movil.numeroMovil }}</td>
+        <td colspan="3">No hay servicios</td>
+        <td>{{ movil.resultadoFinal }}</td>
+      </tr>
+      <tr *ngIf="movil.servicios.length === 0">
+        <td>{{ movil.numeroMovil }}</td>
+        <td colspan="3">No hay servicios</td>
+        <td>{{ movil.descuentoRemiseria }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+ -->
+
+ <div class="bg-custom">
+  <div *ngIf="nombreUsuario" class="contenedor-info">
+    <a routerLink="/vista"><button class="button-back">Back</button></a>
+    <h3 class="h3-user-text">Bienvenido usuario: {{nombreUsuario}} </h3>
+</div>
+
+  <div class="container-principal">
+    <div class="info-container">
+      <h1>Bienvenido a tu Informe</h1>
+      <h5>Aquí podras ver los servicios de los moviles que tienes con sus respectivos datos, donde podras sacar la ganancia que has hecho en la semana.</h5>
+    </div>
   </div>
-  
-  <!-- Mostrar móviles -->
-  <div *ngIf="informeMovil.moviles && informeMovil.moviles.length > 0">
-    <h2>Móviles:</h2>
-    <ul>
-      <li *ngFor="let movil of informeMovil.moviles">
-       Movil: {{ movil.numeroMovil }} - Marca: {{ movil.modelo }}
-      </li>
-    </ul>
+
+  <div class="table">
+   
+      <div class="table_component" role="region" tabindex="0">
+      <table>
+
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Fecha</th>
+                  <th>Origen</th>
+                  <th>Total</th>
+                  <th>Total c/ Descuento</th>
+              </tr>
+
+          </thead>
+ <tbody>
+    <ng-container *ngFor="let movil of informeMovil.moviles">
+      <ng-container *ngFor="let servicio of movil.servicios; let i = index">
+        <tr>
+          <td *ngIf="i === 0" [attr.rowspan]="movil.servicios.length">{{ movil.numeroMovil }}</td>
+          <td>{{ servicio.date | date }}</td>
+          <td>{{ servicio.origen }}</td>
+          <td>{{ servicio.total }}</td>
+          <td *ngIf="i === 0" [attr.rowspan]="movil.servicios.length">{{ movil.resultadoFinal }}</td>
+        </tr>
+      </ng-container>
+      <tr *ngIf="movil.servicios.length === 0">
+        <td>{{ movil.numeroMovil }}</td>
+        <td colspan="3">No hay servicios</td>
+        <td>{{ movil.resultadoFinal }}</td>
+      </tr>
+      <tr *ngIf="movil.servicios.length === 0">
+        <td>{{ movil.numeroMovil }}</td>
+        <td colspan="3">No hay servicios</td>
+        <td>{{ movil.descuentoRemiseria }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+      </table>
+
+      </div>
   </div>
-  
+
+ </div>

@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
         }
 
         userLogged = user
-        console.log("este es el user:",userLogged)
+/*         console.log("este es el user:",userLogged) */
         const token = jwt.sign({username:username}, process.env.jwt_secret, {expiresIn:'1h'});
         return res.status(200).json({token})
 
@@ -81,12 +81,11 @@ router.post('/vista/movil', async (req, res) => {
   }
 });
 
-router.post('/vista/servicio', async(req,res)=>{
-    
-    const {date,origen,total} = req.body
+router.post('/vista/servicio', async (req, res) => {
+    const { date, origen, total, numeroMovil } = req.body;
 
-    if(!date||!origen||!total){
-        res.status(403).send("se requiren todos los datos para opoder continuar");
+    if (!date || !origen || !total || !numeroMovil) {
+        return res.status(403).send("Se requieren todos los datos para poder continuar");
     }
 
     try {
@@ -95,22 +94,28 @@ router.post('/vista/servicio', async(req,res)=>{
             return res.status(403).send("Usuario no autenticado");
         }
 
+
         if (userLogged.movil.length === 0) {
             return res.status(403).send("El usuario no tiene móviles registrados");
         }
 
-        const movil = userLogged.movil[0];
 
-        movil.servicios.push({ date, origen, total });
+        const foundMovil = userLogged.movil.find(movil => movil.numeroMovil == numeroMovil);
+
+        if (!foundMovil) {
+            return res.status(403).send("No se encuentra el móvil en la base de datos");
+        }
+
+        foundMovil.servicios.push({ date, origen, total });
         await userLogged.save();
 
-        res.status(201).send('Datos del servicio agregados correctamente');
+        return res.status(201).send('Datos del servicio agregados correctamente');
     } catch (error) {
-        res.status(400).send("Error al cargar servicios");
-        console.log(error);
+        console.error(error);
+        return res.status(400).send("Error al cargar servicios");
     }
+});
 
-})
 
 // Nuevo endpoint para obtener toda la información del usuario
 router.get('/vista/informe', async (req, res) => {
